@@ -38,3 +38,54 @@ footer {
     color: white;
     padding: 15px;
 }
+.hero {
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero h2 {
+    margin: 10px 0;
+    color: #00c6ff;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #00c6ff;
+    color: black;
+    margin: 5px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn.outline {
+    background: transparent;
+    border: 1px solid #00c6ff;
+    color: #00c6ff;
+}
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+}
+body {
+    background: #0d1117;
+    color: #e6edf3;
+}
+.card:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
+}
