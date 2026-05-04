@@ -1,91 +1,671 @@
-body {
+/*=============================================
+   Global Styles & Reset
+=============================================*/
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial;
-    background: #f5f5f5;
+    padding: 0;
 }
 
-header {
-    background: #007bff;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
-section {
-    padding: 40px;
-    text-align: center;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-.skills .skill-box span {
-    background: #007bff;
-    color: white;
-    padding: 8px 12px;
-    margin: 5px;
-    display: inline-block;
-    border-radius: 5px;
+ul {
+    list-style: none;
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    margin: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-footer {
-    background: #222;
-    color: white;
-    padding: 15px;
-}
-.hero {
-    background: linear-gradient(135deg, #0f2027, #2c5364);
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 40px;
-}
-
-.hero h2 {
-    margin: 10px 0;
-    color: #00c6ff;
-}
-
-.buttons {
-    margin-top: 20px;
-}
-
-.btn {
-    padding: 10px 20px;
-    background: #00c6ff;
-    color: black;
-    margin: 5px;
-    border-radius: 6px;
+a {
     text-decoration: none;
+    color: inherit;
 }
 
-.btn.outline {
-    background: transparent;
-    border: 1px solid #00c6ff;
-    color: #00c6ff;
+/*=============================================
+   Header / Nav
+=============================================*/
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
 }
-.projects {
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.header__logo {
+    font-family: 'Sacramento', cursive;
+    font-size: 2.5rem;
+    color: aqua;
+}
+
+.header__nav-links ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.header__nav-links a {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
+    text-transform: uppercase;
+}
+
+.header__nav-links a:hover {
+    color: tomato;
+}
+
+/*=============================================
+   Section Headers
+=============================================*/
+.section-header {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #212020;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+.section-header::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: aqua;
+}
+
+.section-header h1 span {
+    color: #fff;
+}
+
+/*=============================================
+   Hero Section
+=============================================*/
+.hero {
+    min-height: 100vh;
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Faint background triangles/grids typical of such themes */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(0,255,255,0.05) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.hero__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero__content {
+    flex: 1;
+}
+
+.hero__intro-title {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.hero__intro-line {
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+    background: aqua;
+    margin-right: 15px;
+}
+
+.hero__animated-alphabet-box {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    line-height: 1;
 }
 
-.card {
-    width: 300px;
+.alphabet {
+    color: tomato;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
-body {
-    background: #0d1117;
-    color: #e6edf3;
+
+.alphabet:hover {
+    transform: scale(1.2) translateY(-10px);
+    color: aqua;
 }
-.card:hover {
+
+.alphabet--last {
+    margin-right: 0.5em;
+}
+
+.hero__dev-text {
+    color: #fff;
+}
+
+.hero__description {
+    font-weight: 300;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: #ccc;
+}
+
+.hero__description span {
+    border-bottom: 2px solid aqua;
+    color: #fff;
+}
+
+.hero__buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.hero__buttons a {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.hero__know-btn {
+    background: aqua;
+    color: #000;
+    border: 2px solid aqua;
+}
+
+.hero__know-btn:hover {
+    background: transparent;
+    color: #fff;
+    border-color: tomato;
+}
+
+.hero__contact-btn {
+    background: transparent;
+    color: #fff;
+    border: 2px solid aqua;
+}
+
+.hero__contact-btn:hover {
+    background: tomato;
+    border-color: tomato;
+}
+
+.hero__image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.hero__image-wrapper {
+    position: relative;
+    width: clamp(250px, 40vw, 450px);
+    height: clamp(250px, 40vw, 450px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0,255,255,0.2);
+    box-shadow: 0 0 30px rgba(0,255,255,0.1);
+}
+
+.hero__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(0.9);
+    transition: transform 0.5s;
+}
+
+.hero__image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/*=============================================
+   Glass Card Utility
+=============================================*/
+.glass-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-color: rgba(0,255,255,0.3);
+}
+
+/*=============================================
+   Works Section
+=============================================*/
+.works {
+    padding: 5rem 5%;
+    position: relative;
+}
+
+.works__grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: linear-gradient(167deg, #000 21%, #1a2525);
+    border-radius: 10px;
+    border-top: 3px solid aqua;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
+}
+
+.project-card:nth-child(2) { border-top-color: orange; }
+.project-card:nth-child(3) { border-top-color: #5ced73; }
+
+.project-card:hover {
     transform: translateY(-10px);
-    transition: 0.3s;
 }
+
+.project-card__content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+}
+
+.tech-stack {
+    color: aqua;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.project-desc {
+    color: #ccc;
+    font-weight: 300;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.project-link {
+    display: block;
+    text-align: center;
+    padding: 0.8rem;
+    background: aqua;
+    color: #000;
+    font-weight: 700;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.project-card:nth-child(2) .project-link { background: orange; }
+.project-card:nth-child(3) .project-link { background: #5ced73; }
+
+/*=============================================
+   About Section
+=============================================*/
+.about {
+    padding: 5rem 5%;
+}
+
+.about__details-container {
+    max-width: 800px;
+}
+
+.about__card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.about__card h2 span {
+    color: aqua;
+}
+
+.about__card p {
+    color: #ccc;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.about__card ul li {
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.about__card ul li strong {
+    color: aqua;
+    display: inline-block;
+    width: 100px;
+}
+
+/*=============================================
+   Timeline (Experience & Education)
+=============================================*/
+.timeline-section {
+    padding: 5rem 5%;
+}
+
+.timeline__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.timeline__title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: aqua;
+}
+
+.timeline__box {
+    margin-bottom: 2rem;
+}
+
+.timeline__box h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+
+.timeline__box h4 {
+    font-size: 1.1rem;
+    color: #ccc;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.timeline__date {
+    color: tomato;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.timeline__box ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    color: #bbb;
+}
+
+.timeline__box ul li {
+    margin-bottom: 0.5rem;
+}
+
+/*=============================================
+   Skills Section
+=============================================*/
+.skill {
+    padding: 5rem 5%;
+}
+
+.skill__details h4 {
+    font-size: 1.5rem;
+    color: aqua;
+    margin-bottom: 1rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tags span {
+    background: #1c1e1e;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: 1px solid rgba(0,255,255,0.2);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+}
+
+.skill-tags span:hover {
+    background: aqua;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/*=============================================
+   Contact Section
+=============================================*/
+.contact {
+    padding: 5rem 5%;
+}
+
+.contact__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.contact__details {
+    flex: 1;
+}
+
+.contact__info {
+    flex: 1;
+}
+
+.contact__form-group {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__form-group label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    color: aqua;
+}
+
+.contact__form-group input,
+.contact__form-group textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding: 0.5rem 0;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: none;
+}
+
+.contact__form-group input:focus,
+.contact__form-group textarea:focus {
+    border-bottom-color: aqua;
+}
+
+.contact__send-btn {
+    background: aqua;
+    color: #000;
+    border: none;
+    padding: 1rem 3rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    float: right;
+    transition: background 0.3s, color 0.3s;
+}
+
+.contact__send-btn:hover {
+    background: transparent;
+    color: aqua;
+    border: 1px solid aqua;
+}
+
+.contact__info-title {
+    font-family: 'Sacramento', cursive;
+    font-size: 3rem;
+    color: tomato;
+    margin-bottom: 2rem;
+}
+
+.contact__info-details ul li {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__info-details ul li strong {
+    color: aqua;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/*=============================================
+   Footer
+=============================================*/
+.footer {
+    background: #0e0e0e;
+    text-align: center;
+    padding: 2rem 0;
+    font-family: 'Outfit', sans-serif;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/*=============================================
+   Animated Background (Blobs)
+=============================================*/
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.blob {
+    position: absolute;
+    filter: blur(80px);
+    opacity: 0.3; /* Subtle glow */
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out alternate;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: aqua;
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: tomato;
+    bottom: -50px;
+    right: -50px;
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    width: 350px;
+    height: 350px;
+    background: #5ced73;
+    top: 30%;
+    left: 40%;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(100px, -100px) scale(1.1); }
+    66% { transform: translate(-50px, 150px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+/*=============================================
+   Responsive
+=============================================*/
+@media (max-width: 998px) {
+    .hero__container {
+        flex-direction: column-reverse;
+        text-align: left;
+        padding-top: 5rem;
+    }
+    .hero__image {
+        justify-content: flex-start;
+        margin-bottom: 3rem;
+    }
+    .timeline__grid, .contact__content {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    .header__nav-links ul {
+        display: none; /* simple mobile menu hiding for now */
+    }
+}
+
