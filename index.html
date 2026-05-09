@@ -1,43 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arvind Kushwaha - Portfolio</title>
-    <meta name="description" content="Software Developer Portfolio" />
-    
+    <title>Arvind R. Kushwaha - Software Engineer & Freelancer</title>
+    <meta name="description"
+        content="Arvind R. Kushwaha - Professional Full Stack Developer & Freelancer providing affordable, end-to-end web solutions, ERP systems, and student projects." />
+
     <!-- Premium Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet" />
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
     <!-- AOS Library for scroll animations -->
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-content">
+            <span class="loader-text">INITIALIZING...</span>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-glow" id="cursor-glow"></div>
 
     <!-- Animated Background -->
     <div class="bg-animation">
+        <div class="grid-bg"></div>
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
     </div>
 
     <!-- Header Navigation -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="header__container">
-            <div class="header__logo">Arvind</div>
+            <div class="header__logo">ARVIND.</div>
             <nav class="header__nav-links">
-                <ul>
+                <ul id="nav-list">
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#professional">Experience</a></li>
+                    <li><a href="#freelance">Freelance</a></li>
+                    <li><a href="#works">Portfolio</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
@@ -45,200 +70,331 @@
     <section class="hero" id="hero">
         <div class="hero__container">
             <div class="hero__content">
-                <div class="hero__intro-title">
+                <div class="hero__intro-title" data-aos="fade-down" data-aos-delay="200">
                     <span class="hero__intro-line"></span>
-                    <span>Full Stack Developer</span>
-                </div>
-                
-                <div class="hero__animated-alphabet-box">
-                    <span class="alphabet" data-aos="fade-up" data-aos-delay="100">A</span>
-                    <span class="alphabet" data-aos="fade-up" data-aos-delay="200">R</span>
-                    <span class="alphabet" data-aos="fade-up" data-aos-delay="300">V</span>
-                    <span class="alphabet" data-aos="fade-up" data-aos-delay="400">I</span>
-                    <span class="alphabet" data-aos="fade-up" data-aos-delay="500">N</span>
-                    <span class="alphabet alphabet--last" data-aos="fade-up" data-aos-delay="600">D</span>
-                    <span class="hero__dev-text" data-aos="fade-left" data-aos-delay="800">KUSHWAHA</span>
+                    <span class="hero__intro-text">Software Engineer & Freelancer</span>
                 </div>
 
-                <div class="hero__description" data-aos="fade-up" data-aos-delay="1000">
+                <div class="hero__animated-alphabet-box">
+                    <span class="alphabet" data-aos="fade-up" data-aos-delay="100">A</span>
+                    <span class="alphabet" data-aos="fade-up" data-aos-delay="150">R</span>
+                    <span class="alphabet" data-aos="fade-up" data-aos-delay="200">V</span>
+                    <span class="alphabet" data-aos="fade-up" data-aos-delay="250">I</span>
+                    <span class="alphabet" data-aos="fade-up" data-aos-delay="300">N</span>
+                    <span class="alphabet alphabet--last" data-aos="fade-up" data-aos-delay="350">D</span>
+                    <span class="hero__dev-text glow-text" data-aos="fade-left" data-aos-delay="500">R. KUSHWAHA</span>
+                </div>
+
+                <div class="hero__description" data-aos="fade-up" data-aos-delay="700">
                     <p>
-                        <span>Full-Stack Developer</span> specializing in C#, ASP.NET, and Web APIs.<br/> 
-                        With over 4 years of experience building robust ERP systems and centralized management platforms.
+                        <span class="highlight">Full Stack Developer</span> with 4+ Years of Industry Experience.
+                        Specializing in highly robust ERP systems, scalable Web APIs, and secure third-party
+                        integrations.<br /><br />
+                        <strong>Freelancer – Affordable Web Development, Hosting, Domain Setup & Student
+                            Projects.</strong><br /><br />
+                        <span style="color: var(--neon-cyan); font-weight: 500;">✓ Complete end-to-end solutions from
+                            coding to deployment</span><br />
+                        <span style="color: var(--neon-cyan); font-weight: 500;">✓ Transparent, low-cost pricing for
+                            students and businesses</span>
                     </p>
                 </div>
 
-                <div class="hero__buttons" data-aos="fade-up" data-aos-delay="1200">
-                    <a href="#about" class="hero__know-btn">KNOW MORE</a>
-                    <a href="#contact" class="hero__contact-btn">CONTACT ME</a>
+                <div class="hero__buttons" data-aos="fade-up" data-aos-delay="900">
+                    <a href="#professional" class="btn btn--outline">
+                        <span class="btn-content">VIEW EXPERIENCE</span>
+                    </a>
+                    <a href="#freelance" class="btn btn--primary">
+                        <span class="btn-content">HIRE ME</span>
+                    </a>
+                    <a href="arvind-resume.pdf" download class="btn btn--outline">
+                        <span class="btn-content">DOWNLOAD RESUME</span>
+                    </a>
+                </div>
+
+                <div class="social-icons" data-aos="fade-up" data-aos-delay="1100">
+                    <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg></a>
+                    <a href="mailto:arvindkushwaha506@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                        </svg></a>
                 </div>
             </div>
-            
-            <div class="hero__image" data-aos="zoom-in" data-aos-duration="1500">
-                <div class="hero__image-wrapper">
-                    <!-- Kept the exact image filename you had -->
+
+            <div class="hero__image" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="300">
+                <div class="hero__image-wrapper glass-panel">
                     <img src="profile_placeholder.jpeg" alt="Arvind Kushwaha Profile" />
                     <div class="hero__glitch-effect"></div>
+                    <div class="hero__cyber-border"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Works Section -->
+    <!-- A) PROFESSIONAL EXPERIENCE SECTION -->
+    <section class="professional" id="professional">
+        <div class="timeline__container works__container">
+            <div class="section-header timeline__header" data-aos="fade-right">
+                <h2><span class="neon-text">01.</span> PROFESSIONAL EXPERIENCE</h2>
+                <p>
+                    Enterprise-level software engineering focusing on complex business logic, large-scale databases, and
+                    secure system architectures.
+                </p>
+            </div>
+
+            <div class="timeline__grid">
+                <div class="timeline__column" data-aos="fade-up">
+                    <div class="timeline__box glass-panel" style="padding: 3.5rem;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+                            <div>
+                                <h3 class="glow-text" style="font-size: 2rem; margin-bottom: 0.5rem;">Software Developer
+                                </h3>
+                                <h4 style="color: var(--text-secondary); font-size: 1.2rem;">Robonic Infotech</h4>
+                            </div>
+                            <div class="timeline__date" style="margin: 0; padding: 0.8rem 1.5rem; font-size: 1rem;">
+                                <span class="neon-text">4+ Years (Present)</span>
+                            </div>
+                        </div>
+
+                        <p
+                            style="color: var(--text-primary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                            Engineered robust, enterprise-level ERP software managing complete life cycles for Schools,
+                            Colleges, Universities, and Coaching Institutes.
+                        </p>
+
+                        <div class="skill-group">
+                            <h5
+                                style="color: var(--neon-cyan); margin-bottom: 1.5rem; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;">
+                                Core Responsibilities & Technical Implementations:</h5>
+                            <ul class="timeline-list">
+                                <li><strong class="text-primary">ERP Modules:</strong> Student lifecycle, Fees,
+                                    Attendance, Exams.</li>
+                                <li><strong class="text-primary">RESTful APIs:</strong> C# & ASP.NET MVC for mobile
+                                    apps.</li>
+                                <li><strong class="text-primary">Database:</strong> SQL Server 2019 optimization.</li>
+                                <li><strong class="text-primary">Hardware:</strong> RFID & Biometric scanner modules.
+                                </li>
+                                <li><strong class="text-primary">Gateways:</strong> Payment, SMS, Email & FCM.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gradient Divider -->
+    <div
+        style="height: 2px; background: linear-gradient(90deg, transparent, var(--neon-cyan), var(--neon-purple), transparent); opacity: 0.5; margin: 4rem 0;">
+    </div>
+
+    <!-- B) FREELANCE SERVICES SECTION -->
+    <section class="services freelance-section" id="freelance">
+        <div class="services__container works__container">
+            <div class="section-header works__header" data-aos="fade-right">
+                <h2><span class="neon-text">02.</span> FREELANCE SERVICES</h2>
+                <p>
+                    Providing highly affordable, premium quality end-to-end web solutions explicitly designed for small
+                    businesses, startups, and academic students.
+                </p>
+            </div>
+
+            <!-- Freelance Selling Points -->
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; justify-content: center;"
+                data-aos="fade-up">
+                <div class="glass-tag">⚡ Fast Delivery</div>
+                <div class="glass-tag">💰 Affordable Pricing</div>
+                <div class="glass-tag">🚀 Complete Setup</div>
+                <div class="glass-tag">🎓 Student-Friendly</div>
+            </div>
+
+            <div class="works__grid">
+                <div class="works__grid-container">
+
+                    <div class="project-card glass-panel freelance-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-card__content">
+                            <span class="neon-icon"
+                                style="font-size: 2rem; color: var(--neon-cyan); margin-bottom: 1rem; display: block;">💻</span>
+                            <h3 class="glow-text" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Website Development
+                            </h3>
+                            <p class="tech-stack">Static & Dynamic Web Apps</p>
+                            <p class="project-desc">Complete front-to-back website development creating highly
+                                responsive, secure, and beautiful digital experiences tailored to your business needs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-panel freelance-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-card__content">
+                            <span class="neon-icon"
+                                style="font-size: 2rem; color: var(--neon-cyan); margin-bottom: 1rem; display: block;">⚙️</span>
+                            <h3 class="glow-text" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Custom Web
+                                Applications</h3>
+                            <p class="tech-stack">Tailored Business Logic</p>
+                            <p class="project-desc">Development of complex bespoke web systems explicitly designed to
+                                automate your specific organizational workflows and data management.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-panel freelance-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-card__content">
+                            <span class="neon-icon"
+                                style="font-size: 2rem; color: var(--neon-cyan); margin-bottom: 1rem; display: block;">🎓</span>
+                            <h3 class="glow-text" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Student Projects
+                            </h3>
+                            <p class="tech-stack">Low-Cost & Dedicated</p>
+                            <p class="project-desc">Expert, affordable assistance for college final-year projects.
+                                Receive a fully functioning, well-documented application aligned perfectly with your
+                                grading requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-panel freelance-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-card__content">
+                            <span class="neon-icon"
+                                style="font-size: 2rem; color: var(--neon-cyan); margin-bottom: 1rem; display: block;">🌍</span>
+                            <h3 class="glow-text" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Hosting & Domain
+                                Setup</h3>
+                            <p class="tech-stack">End-to-End Deployment</p>
+                            <p class="project-desc">Zero technical burden for you. I handle purchasing, DNS mapping, SSL
+                                configuration, and optimized server deployment to get your website live instantly.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-panel freelance-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-card__content">
+                            <span class="neon-icon"
+                                style="font-size: 2rem; color: var(--neon-cyan); margin-bottom: 1rem; display: block;">🔌</span>
+                            <h3 class="glow-text" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Integrations & APIs
+                            </h3>
+                            <p class="tech-stack">Payment | SMS | Email</p>
+                            <p class="project-desc">Seamless integration of critical external services including Payment
+                                Gateways, automated SMS/Email routing, and secure RESTful API development.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-panel freelance-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="project-card__content">
+                            <span class="neon-icon"
+                                style="font-size: 2rem; color: var(--neon-cyan); margin-bottom: 1rem; display: block;">🔧</span>
+                            <h3 class="glow-text" style="font-size: 1.6rem; margin-bottom: 0.5rem;">Maintenance &
+                                Support</h3>
+                            <p class="tech-stack">Long-Term Reliability</p>
+                            <p class="project-desc">Ongoing technical support, bug fixing, database backups, and feature
+                                upgrades to ensure your application remains secure and highly performant over time.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;" data-aos="fade-up">
+                    <a href="#contact" class="btn btn--primary" style="padding: 1.2rem 3rem; font-size: 1.1rem;">
+                        <span class="btn-content">START YOUR PROJECT NOW</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <!-- Portfolio Section -->
     <section class="works" id="works">
         <div class="works__container">
             <div class="section-header works__header" data-aos="fade-right">
-                <h1><span>WORKS.</span></h1>
+                <h2><span class="neon-text">03.</span> PORTFOLIO & PROJECTS</h2>
+                <p>A showcase of enterprise-grade ERP ecosystems and institutional automation platforms.</p>
             </div>
-            
-            <div class="works__grid">
-                <div class="works__grid-container">
-                    
+
+            <div class="works__grid" style="width: 100%; margin: 0;">
+                <div class="works__grid-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; width: 100%;">
                     <!-- Project 1 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card glass-panel" data-aos="fade-up">
                         <div class="project-card__content">
-                            <h3>E-Campus Management Application</h3>
-                            <p class="tech-stack">C# | ASP.NET | SQL Server | Web APIs</p>
-                            <p class="project-desc">Designed and developed new modules for managing school, college, university, and coaching institute operations. Integrated payment gateways, SMS, and Email modules.</p>
-                            <a href="#" class="project-link">View Details</a>
+                            <h3 class="glow-text">E-Campus ERP Ecosystem</h3>
+                            <p class="tech-stack">C# | ASP.NET | SQL Server</p>
+                            <p class="project-desc">Engineered an enterprise-grade ERP ecosystem for large-scale educational institutes with integrated gateways.</p>
+                            <button class="btn btn--outline" onclick="openDashboardModal()" style="width: 100%; margin-top: 1.5rem;"><span class="btn-content">VIEW LIVE SYSTEM</span></button>
                         </div>
                     </div>
-
                     <!-- Project 2 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card glass-panel" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-card__content">
-                            <h3>Centralized Notification Management</h3>
-                            <p class="tech-stack">.NET | SQL Server 2019 | Web APIs | Firebase</p>
-                            <p class="project-desc">Developed API-based real-time alert systems using Firebase Console. Implemented communication systems through Dove and SMS Country for seamless notifications.</p>
-                            <a href="#" class="project-link">View Details</a>
+                            <h3 class="glow-text">Mobile API Gateway</h3>
+                            <p class="tech-stack">Web APIs | MVC | JSON</p>
+                            <p class="project-desc">High-throughput RESTful APIs for seamless mobile integration, supporting real-time tracking.</p>
+                            <button class="btn btn--outline" onclick="openDashboardModal()" style="width: 100%; margin-top: 1.5rem;"><span class="btn-content">VIEW LIVE SYSTEM</span></button>
                         </div>
                     </div>
-
                     <!-- Project 3 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card glass-panel" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-card__content">
-                            <h3>E-Mobile Management Application</h3>
-                            <p class="tech-stack">ASP.NET MVC | jQuery | Bootstrap</p>
-                            <p class="project-desc">Developed APIs for mobile application integration for institutes. Implemented live location tracking with polygon-based marking using GPRS.</p>
-                            <a href="#" class="project-link">View Details</a>
+                            <h3 class="glow-text">FCM Notification Engine</h3>
+                            <p class="tech-stack">Firebase | SQL | .NET</p>
+                            <p class="project-desc">Real-time alert system using Firebase Cloud Messaging (FCM) for instant mass communication.</p>
+                            <button class="btn btn--outline" onclick="openDashboardModal()" style="width: 100%; margin-top: 1.5rem;"><span class="btn-content">VIEW LIVE SYSTEM</span></button>
                         </div>
                     </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about__container">
-            <div class="section-header about__header" data-aos="fade-right">
-                <h1><span>ABOUT.</span></h1>
-            </div>
-            
-            <div class="about__details-container">
-                <div class="about__details" data-aos="fade-up">
-                    <div class="about__card glass-card">
-                        <h2><span>Who am I?</span></h2>
-                        <p>I am a passionate software developer based in Mumbai, specializing in building high-performance web and mobile backend applications. I would like to be a part of an organization where I could use and enhance my knowledge and talent for the development of both the organization and myself.</p>
-                        <br/>
-                        <ul>
-                            <li><strong>Name:</strong> Arvind Rambadan Kushwaha</li>
-                            <li><strong>Location:</strong> Mumbai, Maharashtra</li>
-                            <li><strong>Role:</strong> Full Stack Developer</li>
-                        </ul>
+                    <!-- Project 4 -->
+                    <div class="project-card glass-panel" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-card__content">
+                            <h3 class="glow-text">Biometric Hardware Hub</h3>
+                            <p class="tech-stack">RFID | Biometric | Hardware</p>
+                            <p class="project-desc">Direct hardware communication modules interfacing Biometric scanners with centralized software.</p>
+                            <button class="btn btn--outline" onclick="openDashboardModal()" style="width: 100%; margin-top: 1.5rem;"><span class="btn-content">VIEW LIVE SYSTEM</span></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience / Education Section -->
-    <section class="timeline-section" id="experience">
-        <div class="timeline__container">
-            <div class="section-header timeline__header" data-aos="fade-right">
-                <h1><span>EXPERIENCE & EDUCATION.</span></h1>
-            </div>
-            
-            <div class="timeline__grid">
-                
-                <!-- Experience -->
-                <div class="timeline__column" data-aos="fade-right">
-                    <h2 class="timeline__title">Internships & Work</h2>
-                    
-                    <div class="timeline__box glass-card">
-                        <h3>Robonic Infotech</h3>
-                        <h4>Full Stack Developer</h4>
-                        <p class="timeline__date">4 Years (Current)</p>
-                        <ul>
-                            <li>Active member in coding, implementing business logic as per Functional Specifications.</li>
-                            <li>Developed and integrated QR code scanning and barcode functionality.</li>
-                            <li>Managed student, faculty, and course data ensuring data accuracy and consistency.</li>
-                            <li>Provided online support to resolve real-time issues and troubleshoot system discrepancies.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div class="timeline__column" data-aos="fade-left">
-                    <h2 class="timeline__title">Graduation</h2>
-                    
-                    <div class="timeline__box glass-card">
-                        <h3>Mumbai University</h3>
-                        <h4>B.Sc. in Information Technology</h4>
-                        <p class="timeline__date">2020</p>
-                    </div>
-
-                    <div class="timeline__box glass-card">
-                        <h3>Maharashtra State Board</h3>
-                        <h4>Higher Secondary Certificate (HSC)</h4>
-                        <p class="timeline__date">2017</p>
-                    </div>
-
-                    <div class="timeline__box glass-card">
-                        <h3>CBSE Board</h3>
-                        <h4>Secondary School Certificate (SSC)</h4>
-                        <p class="timeline__date">2015</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section class="skill" id="skills">
-        <div class="skill__main-container">
+        <div class="skill__main-container works__container">
             <div class="section-header skill__header" data-aos="fade-right">
-                <h1><span>SKILLS.</span></h1>
+                <h2><span class="neon-text">04.</span> CORE EXPERTISE</h2>
+                <p>
+                    Mastery in modern full-stack development, specializing in enterprise-grade ERP architecture,
+                    high-performance Web APIs, and hardware-software synergy.
+                </p>
             </div>
-            
-            <div class="skill__inner-container">
-                <div class="skill__info" data-aos="fade-right">
-                    <div class="skill__details">
-                        <h4>Web Technologies</h4>
-                        <div class="skill-tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>jQuery</span>
-                            <span>Bootstrap</span>
-                            <span>Web APIs (REST)</span>
-                        </div>
-                        
-                        <h4 style="margin-top: 1.5em;">Languages & Frameworks</h4>
-                        <div class="skill-tags">
-                            <span>C#</span>
-                            <span>ASP.NET</span>
-                            <span>MVC</span>
-                            <span>ADO.NET</span>
-                            <span>.NET Framework</span>
-                        </div>
 
-                        <h4 style="margin-top: 1.5em;">Database & Tools</h4>
-                        <div class="skill-tags">
-                            <span>SQL Server 2019</span>
-                            <span>SQLite</span>
-                            <span>Firebase Cloud Messaging</span>
+            <div class="skill__inner-container glass-panel" data-aos="fade-up">
+                <div class="skill__info">
+                    <div class="skill__details">
+                        <div class="skill-group">
+                            <h4 class="glow-text">Backend & Frameworks</h4>
+                            <div class="skill-tags">
+                                <span class="glass-tag">C#</span>
+                                <span class="glass-tag">ASP.NET MVC</span>
+                                <span class="glass-tag">ADO.NET</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4 class="glow-text">Frontend Technologies</h4>
+                            <div class="skill-tags">
+                                <span class="glass-tag">HTML5/CSS3</span>
+                                <span class="glass-tag">JavaScript</span>
+                                <span class="glass-tag">jQuery</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4 class="glow-text">Database & Cloud</h4>
+                            <div class="skill-tags">
+                                <span class="glass-tag">SQL Server</span>
+                                <span class="glass-tag">Firebase FCM</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4 class="glow-text">Hardware & Systems</h4>
+                            <div class="skill-tags">
+                                <span class="glass-tag">Biometric/RFID</span>
+                                <span class="glass-tag">IIS Server</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -250,35 +406,77 @@
     <section class="contact" id="contact">
         <div class="contact__container">
             <div class="section-header contact__header" data-aos="fade-right">
-                <h1><span>CONTACT.</span></h1>
+                <h2><span class="neon-text">05.</span> FREELANCE ENQUIRY</h2>
+                <p>
+                    Interested in working together or have a student project requirement? Reach out via the secure form
+                    for a fast response.
+                </p>
             </div>
-            
+
             <div class="contact__content">
-                <div class="contact__details" data-aos="fade-right">
-                    <form class="contact__form">
+                <div class="contact__details glass-panel" data-aos="fade-right">
+                    <h3 class="glow-text" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Hire Me / Get a Quote</h3>
+                    <form class="contact__form" id="contact-form">
+                        <input type="hidden" name="access_key" value="35ca99a4-94c2-47e2-8210-1e075c259673">
                         <div class="contact__form-group">
                             <label>Name</label>
-                            <input type="text" placeholder="Your Name" required />
+                            <input type="text" name="name" placeholder="Enter your full name" required />
+                            <div class="input-glow"></div>
                         </div>
                         <div class="contact__form-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="Your Email" required />
+                            <label>Email Address</label>
+                            <input type="email" name="email" placeholder="Enter email" required />
+                            <div class="input-glow"></div>
                         </div>
                         <div class="contact__form-group">
-                            <label>Message</label>
-                            <textarea rows="4" placeholder="Your Message" required></textarea>
+                            <label>Requirements</label>
+                            <textarea rows="4" name="message" placeholder="Describe your project..."
+                                required></textarea>
+                            <div class="input-glow"></div>
                         </div>
-                        <button type="submit" class="contact__send-btn">SEND</button>
+                        <button type="submit" class="btn btn--primary contact__send-btn" id="submit-btn">
+                            <span class="btn-content">SUBMIT INQUIRY</span>
+                        </button>
                     </form>
                 </div>
-                
-                <div class="contact__info" data-aos="fade-left">
-                    <h2 class="contact__info-title">Get in touch</h2>
+
+                <div class="contact__info glass-panel" data-aos="fade-left">
+                    <h3 class="contact__info-title glow-text">Direct Connection</h3>
                     <div class="contact__info-details">
-                        <ul>
-                            <li><strong>Email:</strong> arvindkushwaha506@gmail.com</li>
-                            <li><strong>Phone:</strong> +91 8573009453</li>
-                            <li><strong>Location:</strong> Naigoan East, Mumbai, Maharashtra 401208</li>
+                        <ul class="contact-list">
+                            <li style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                                <div class="contact__icon-box">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="color: var(--neon-cyan);">
+                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                    </svg>
+                                </div>
+                                <div class="contact__info-text">
+                                    <label>EMAIL</label>
+                                    <span>arvindkushwaha506@gmail.com</span>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                                <div class="contact__icon-box">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="color: var(--neon-cyan);">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.396.015 12.03c0 2.12.554 4.189 1.602 6.006L0 24l6.149-1.613a11.815 11.815 0 005.9 1.532h.005c6.634 0 12.032-5.396 12.035-12.031a11.782 11.782 0 00-3.476-8.51z"/>
+                                    </svg>
+                                </div>
+                                <div class="contact__info-text">
+                                    <label>WHATSAPP</label>
+                                    <span>+91 8573009453</span>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                                <div class="contact__icon-box">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="color: var(--neon-cyan);">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                </div>
+                                <div class="contact__info-text">
+                                    <label>LOCATION</label>
+                                    <span>Naigaon East, Mumbai</span>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -288,11 +486,58 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>Created with passion by Arvind Kushwaha © 2026</p>
+        <div class="footer__content">
+            <p>SYSTEM ENGINEERED BY <span class="neon-text">ARVIND R. KUSHWAHA</span> © 2026</p>
+            <div class="footer__glow"></div>
+        </div>
     </footer>
+
+    <div class="whatsapp-float" id="whatsapp-btn">
+        <svg viewBox="0 0 448 512" width="32" height="32" fill="white">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.5 69.1 26.8 106.2 26.8 122.7 0 222-99.6 222-222 0-59.3-23.2-115.1-65.1-157.1zM223.9 446.7c-33.1 0-65.5-8.9-93.7-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-82.7 184.6-184.4 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.3-16.3-14.6-27.4-32.7-30.5-38.1-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.4 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7 1-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </div>
+
+    <!-- WhatsApp Chat Window -->
+    <div class="whatsapp-chat" id="whatsapp-chat">
+        <div class="whatsapp-header">
+            <div class="whatsapp-header-info">
+                <i class="fab fa-whatsapp"></i>
+                <span>Let's chat on WhatsApp</span>
+            </div>
+            <button id="whatsapp-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="whatsapp-body">
+            <div class="whatsapp-message">
+                <div class="whatsapp-avatar">A</div>
+                <div class="whatsapp-bubble">
+                    <p class="whatsapp-name">Arvind R. Kushwaha</p>
+                    <p>Hi there! How can I help you today? :)</p>
+                    <span class="whatsapp-time">Just now</span>
+                </div>
+            </div>
+        </div>
+        <div class="whatsapp-footer">
+            <input type="text" id="whatsapp-input" placeholder="Write your message...">
+            <button id="whatsapp-send">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="white">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div id="dashboardModal" class="dashboard-modal">
+        <div class="dashboard-modal-content glass-panel">
+            <span class="close-modal" onclick="closeDashboardModal()">&times;</span>
+            <iframe id="dashboardIframe" src="" title="Centralized System Dashboard" class="dashboard-iframe"></iframe>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
