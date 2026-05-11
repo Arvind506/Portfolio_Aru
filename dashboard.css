@@ -27,8 +27,25 @@ body.dark-saas-theme {
     color: var(--text-primary);
     font-family: var(--font-main);
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+/* Custom Scrollbar for the Dashboard */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color); 
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3); 
 }
 
 /* Glassmorphism Utilities */
@@ -215,7 +232,8 @@ body.dark-saas-theme {
     color: var(--text-primary);
     outline: none;
     font-size: 0.9rem;
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
 }
 
 .header-icons {

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCM Notification Engine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dark-saas-theme">
+    
+    <main class="main-content">
+        <header class="top-header glass-panel">
+            <div class="header-title">
+                <h1>FCM Notification Engine</h1>
+                <p>Firebase Cloud Messaging Mass Communication Hub</p>
+            </div>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search campaigns, logs...">
+                </div>
+            </div>
+        </header>
+
+        <section class="kpi-grid">
+            <div class="kpi-card glass-panel">
+                <div class="kpi-icon blue"><i class="fa-solid fa-paper-plane"></i></div>
+                <div class="kpi-details">
+                    <h3>Total Pushes (24h)</h3>
+                    <div class="kpi-value">1.2M</div>
+                    <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> 5.4%</span>
+                </div>
+            </div>
+            <div class="kpi-card glass-panel">
+                <div class="kpi-icon purple"><i class="fa-solid fa-check-double"></i></div>
+                <div class="kpi-details">
+                    <h3>Delivery Rate</h3>
+                    <div class="kpi-value">99.9%</div>
+                    <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> 0.2%</span>
+                </div>
+            </div>
+            <div class="kpi-card glass-panel">
+                <div class="kpi-icon green"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div class="kpi-details">
+                    <h3>Active Tokens</h3>
+                    <div class="kpi-value">450K</div>
+                    <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> 12K</span>
+                </div>
+            </div>
+            <div class="kpi-card glass-panel">
+                <div class="kpi-icon orange"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                <div class="kpi-details">
+                    <h3>Avg Latency</h3>
+                    <div class="kpi-value">120ms</div>
+                    <span class="trend positive"><i class="fa-solid fa-arrow-down"></i> 15ms</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2 class="section-title">Engine Modules</h2>
+            <div class="modules-grid">
+                <div class="module-card glass-panel">
+                    <div class="module-header">
+                        <div class="icon-wrapper blue-glow"><i class="fa-solid fa-rocket"></i></div>
+                        <span class="status online">Online</span>
+                    </div>
+                    <h3>Push Service</h3>
+                    <p>Core dispatch engine communicating with Firebase.</p>
+                </div>
+                <div class="module-card glass-panel">
+                    <div class="module-header">
+                        <div class="icon-wrapper purple-glow"><i class="fa-solid fa-users-gear"></i></div>
+                        <span class="status online">Online</span>
+                    </div>
+                    <h3>Token Manager</h3>
+                    <p>Handles device token registration and cleanup.</p>
+                </div>
+                <div class="module-card glass-panel">
+                    <div class="module-header">
+                        <div class="icon-wrapper cyan-glow"><i class="fa-solid fa-bullhorn"></i></div>
+                        <span class="status online">Online</span>
+                    </div>
+                    <h3>Campaign Builder</h3>
+                    <p>UI for scheduling and sending mass notifications.</p>
+                </div>
+                <div class="module-card glass-panel">
+                    <div class="module-header">
+                        <div class="icon-wrapper orange-glow"><i class="fa-solid fa-chart-pie"></i></div>
+                        <span class="status online">Online</span>
+                    </div>
+                    <h3>Analytics Viewer</h3>
+                    <p>Tracks open rates and delivery failures.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biometric Hardware Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dark-saas-theme">
+    
+    <main class="main-content">
+        <header class="top-header glass-panel">
+            <div class="header-title">
+                <h1>Biometric Hardware Hub</h1>
+                <p>Centralized Hardware Communication & Sync</p>
+            </div>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search devices, logs...">
+                </div>
+            </div>
+        </header>
+
+        <section class="kpi-grid">
+            <div class="kpi-card glass-panel">
+                <div class="kpi-icon blue"><i class="fa-solid fa-microchip"></i></div>
+                <div class="kpi-details">
+                    <h3>Active Devices</h3>
+                    <div class="kpi-value">128</div>
+                    <span class="trend neutral"><i class="fa-solid fa-minus"></i> 0</span>
+                </div>
+            </div>
+            <div class="kpi-card glass-panel">
+                <div class="kpi-icon purple"><i class="fa-solid fa-rotate"></i></div>
+                <div class="kpi-details">
+                    <h3>Sync Rate</h3>
+                    <div class="kpi-value">98.5%</div>
+                    <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> 1.5%</span>
+                </div>
+            </div>
+            <div class="kpi-card glass-panel">
+                <div class="kpi-icon green"><i class="fa-solid fa-fingerprint"></i></div>
+                <div class="kpi-details">
+                    <h3>Total Scans (24h)</h3>
+                    <div class="kpi-value">45K</div>
+                    <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> 5K</span>
+                </div>
+            </div>
+            <div class="kpi-card glass-panel">
+                <div class="kpi-icon orange"><i class="fa-solid fa-user-secret"></i></div>
+                <div class="kpi-details">
+                    <h3>Unknown Scans</h3>
+                    <div class="kpi-value">12</div>
+                    <span class="trend positive"><i class="fa-solid fa-arrow-down"></i> 3</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2 class="section-title">Hub Components</h2>
+            <div class="modules-grid">
+                <div class="module-card glass-panel">
+                    <div class="module-header">
+                        <div class="icon-wrapper blue-glow"><i class="fa-solid fa-network-wired"></i></div>
+                        <span class="status online">Online</span>
+                    </div>
+                    <h3>Device Manager</h3>
+                    <p>Monitors heartbeat and status of all biometric devices.</p>
+                </div>
+                <div class="module-card glass-panel">
+                    <div class="module-header">
+                        <div class="icon-wrapper purple-glow"><i class="fa-solid fa-ear-listen"></i></div>
+                        <span class="status online">Online</span>
+                    </div>
+                    <h3>Event Listener</h3>
+                    <p>Captures real-time punches and scans via TCP/IP.</p>
+                </div>
+                <div class="module-card glass-panel">
+                    <div class="module-header">
+                        <div class="icon-wrapper cyan-glow"><i class="fa-solid fa-database"></i></div>
+                        <span class="status online">Online</span>
+                    </div>
+                    <h3>Sync Engine</h3>
+                    <p>Pushes biometric data to the central ERP database.</p>
+                </div>
+                <div class="module-card glass-panel">
+                    <div class="module-header">
+                        <div class="icon-wrapper orange-glow"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <span class="status online">Online</span>
+                    </div>
+                    <h3>Auto-Updater</h3>
+                    <p>Manages time-sync and firmware updates for devices.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
