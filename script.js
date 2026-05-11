@@ -1,3 +1,35 @@
+// Custom Slower Smooth Scroll Function (Global Scope)
+function slowScrollTo(targetY, duration = 1500) {
+    const startPosition = window.scrollY;
+    const distance = targetY - startPosition;
+    const startTime = performance.now();
+
+    // Temporarily disable CSS smooth scroll to prevent conflict
+    const originalScrollBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+
+    function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+    }
+
+    function scrollAnimation(currentTime) {
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const easedProgress = easeOutCubic(progress);
+        
+        window.scrollTo(0, startPosition + (distance * easedProgress));
+
+        if (timeElapsed < duration) {
+            requestAnimationFrame(scrollAnimation);
+        } else {
+            // Restore original scroll behavior
+            document.documentElement.style.scrollBehavior = originalScrollBehavior;
+        }
+    }
+
+    requestAnimationFrame(scrollAnimation);
+}
+
 // Initialize AOS Animation Library
 document.addEventListener('DOMContentLoaded', function () {
     // Hide loader
@@ -97,32 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const y = (window.innerHeight - e.pageY * 2) / 100;
             heroImage.style.transform = `translateX(${x}px) translateY(${y}px)`;
         });
-    }
-
-    // Smooth Scrolling for anchor links (Optimized Fallback)
-    // Custom Slower Smooth Scroll Function
-    function slowScrollTo(targetY, duration = 1500) {
-        const startPosition = window.scrollY;
-        const distance = targetY - startPosition;
-        const startTime = performance.now();
-
-        function easeOutCubic(t) {
-            return 1 - Math.pow(1 - t, 3);
-        }
-
-        function scrollAnimation(currentTime) {
-            const timeElapsed = currentTime - startTime;
-            const progress = Math.min(timeElapsed / duration, 1);
-            const easedProgress = easeOutCubic(progress);
-            
-            window.scrollTo(0, startPosition + (distance * easedProgress));
-
-            if (timeElapsed < duration) {
-                requestAnimationFrame(scrollAnimation);
-            }
-        }
-
-        requestAnimationFrame(scrollAnimation);
     }
 
     // Smooth Scrolling for anchor links (Custom Slow Version)
