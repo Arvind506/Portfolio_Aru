@@ -423,6 +423,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function check() {
+        // Skip dimension check on mobile devices to prevent false positives
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (isMobile) return;
+
         if (window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160) triggerLockdown();
     }
 
